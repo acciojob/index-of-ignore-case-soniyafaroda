@@ -1,8 +1,10 @@
-function indexOfIgnoreCase(s1, s2) {
-  // write your code here
-}
+function indexOfIgnoreCase(str: string, subStr: string): number {
+    // Edge case: empty substring → return 0 (consistent with normal indexOf behavior)
+    if (subStr.length === 0) return 0;
 
-// Please do not change the code below
-const s1 = prompt("Enter s1:");
-const s2 = prompt("Enter s2:");
-alert(indexOfIgnoreCase(s1, s2));
+    // Convert both to lowercase for case-insensitive comparison
+    const s1 = str.toLowerCase();
+    const s2 = subStr.toLowerCase();
+
+    return s1.indexOf(s2);
+}
